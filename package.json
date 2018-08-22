@@ -1,0 +1,32 @@
+{
+  "name": "otaserver",
+  "version": "0.1.0",
+  "description": "Simple OverTheAir server for uploading a binaries for IoT devices",
+  "main": "index.js",
+  "scripts": {
+    "dev" : "node index.js 8888 test.txt",
+    "build:linux-x64" : "mkdir build\nnexe index.js -t linux-x64 -o build/otaserver-64\nchmod +x build/otaserver-64",
+    "build:linux-x86" : "mkdir build\nnexe index.js -t linux-x86 -o build/otaserver\nchmod +x build/otaserver",
+    "build:mac-x64" : "mkdir build\nnexe index.js -t mac-x64 -o build/otaserver",
+    "build:windows-x64" : "mkdir build\nnexe index.js -t windows-x64 -o build/otaserver-64.exe",
+    "build:windows-x86" : "mkdir build\nnexe index.js -t windows-x86 -o build/otaserver.exe"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bgrusnak/otaserver.git"
+  },
+  "keywords": [
+    "OTA",
+    "upload",
+    "IoT"
+  ],
+  "author": "Ilya A. Shlyakhovoy",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bgrusnak/otaserver/issues"
+  },
+  "homepage": "https://github.com/bgrusnak/otaserver#readme",
+  "dependencies": {
+    "nexe": "^2.0.0-rc.34"
+  }
+}
